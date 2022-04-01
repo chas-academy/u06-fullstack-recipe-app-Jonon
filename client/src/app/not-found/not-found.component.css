@@ -9,3 +9,20 @@
 .vertical-align {
   text-align: center;
 }
+
+h1 {
+  font-size: 12rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  line-height: 0;
+}
+
+p {
+  font-size: 1.5rem;
+}
