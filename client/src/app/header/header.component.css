@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
+  height: 8%;
 }
 
 .container h1 {
