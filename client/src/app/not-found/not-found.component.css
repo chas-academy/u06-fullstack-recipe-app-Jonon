@@ -5,3 +5,7 @@
   /* Set height needed to align content vertically */
   height: 84vh;
 }
+
+.vertical-align {
+  text-align: center;
+}
