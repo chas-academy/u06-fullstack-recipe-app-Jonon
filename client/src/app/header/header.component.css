@@ -13,3 +13,8 @@
 .container button {
   margin-right: 1rem;
 }
+
+a {
+  text-decoration: none;
+  color: rgb(56, 48, 48);
+}
