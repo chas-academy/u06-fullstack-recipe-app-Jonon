@@ -1,0 +1,4 @@
+/* Sticky footer */
+.content {
+  min-height: calc(100% - 17.65%);
+}
