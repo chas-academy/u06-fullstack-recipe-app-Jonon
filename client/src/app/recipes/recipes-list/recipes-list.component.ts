@@ -8,6 +8,8 @@ import { Recipe, edamamAPI } from '../recipe';
   styleUrls: ['./recipes-list.component.css']
 })
 export class RecipesListComponent implements OnInit {
+  recipes: any = [];
+
   constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {}
