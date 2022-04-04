@@ -7,4 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class RecipeService {
   constructor(private http: HttpClient) {}
+
+  getAll(): Observable<any> {
+    return this.http.get<any>(this.API_URL);
+  }
 }
