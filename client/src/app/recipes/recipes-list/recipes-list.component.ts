@@ -12,5 +12,9 @@ export class RecipesListComponent implements OnInit {
 
   constructor(private recipeService: RecipeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recipeService.getAll().subscribe((data: edamamAPI) => {
+      this.recipes = data.hits.map((res) => res.recipe);
+    });
+  }
 }
