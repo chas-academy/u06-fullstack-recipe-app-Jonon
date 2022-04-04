@@ -1,5 +1,12 @@
 export interface Recipe {
-  id: number;
-  title: string;
+  label: string;
   image: string;
+}
+
+export interface Recipes {
+  recipe: Recipe;
+}
+
+export interface edamamAPI {
+  hits: Recipes[];
 }
