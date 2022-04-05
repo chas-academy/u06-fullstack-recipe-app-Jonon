@@ -1,6 +1,8 @@
 <div class="container">
   <div class="card" *ngFor="let recipe of recipes">
-    <h3>{{ recipe.label }}</h3>
+    <header class="header-wrapper">
+      <h3>{{ recipe.label }}</h3>
+    </header>
     <img src="{{ recipe.image }}" />
   </div>
 </div>
