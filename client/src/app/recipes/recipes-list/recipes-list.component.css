@@ -3,6 +3,6 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.card img {
-  width: 100%;
+.card {
+  position: relative;
 }
