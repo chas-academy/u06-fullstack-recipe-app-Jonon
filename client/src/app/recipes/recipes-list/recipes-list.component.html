@@ -1,8 +1,12 @@
 <div class="container">
   <div class="card" *ngFor="let recipe of recipes">
-    <header class="header-wrapper">
-      <h3>{{ recipe.label }}</h3>
-    </header>
-    <img src="{{ recipe.image }}" />
+    <div *ngFor="let recipeId of recipeId">
+      <a [routerLink]="['/recipes', recipeId]">
+        <header class="header-wrapper">
+          <h3>{{ recipe.label }}</h3>
+        </header>
+        <img src="{{ recipe.image }}" />
+      </a>
+    </div>
   </div>
 </div>
