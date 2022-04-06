@@ -22,5 +22,6 @@ export class RecipesListComponent implements OnInit {
 
   selectRecipeId(id: string) {
     id = id.split('_')[1];
+    this.router.navigate(['/recipes', id]);
   }
 }
