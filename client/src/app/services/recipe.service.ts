@@ -25,4 +25,10 @@ export class RecipeService {
         this.API_KEY
     );
   }
+
+  getRecipe(id: string): Observable<any> {
+    return this.http.get<any>(
+      this.API_URL_BASE + id + this.API_URL_TYPE + this.API_ID + this.API_KEY
+    );
+  }
 }
