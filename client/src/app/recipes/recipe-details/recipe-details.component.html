@@ -1,1 +1,12 @@
-<p>recipe-details works!</p>
+<article>
+  <div>
+    <h2>{{ title }}</h2>
+    <img src="{{ image }}" />
+  </div>
+  <section>
+    <h3>Ingredients:</h3>
+    <ul *ngFor="let ingredients of ingredients">
+      <li>{{ ingredients }}</li>
+    </ul>
+  </section>
+</article>
