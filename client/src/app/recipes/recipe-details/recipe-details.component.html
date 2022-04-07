@@ -1,12 +1,16 @@
-<article>
-  <div>
-    <h2>{{ title }}</h2>
-    <img src="{{ image }}" />
+<article class="center">
+  <div class="wrapper">
+    <header>
+      <h2>{{ title }}</h2>
+    </header>
+    <div class="row">
+      <img src="{{ image }}" />
+      <section>
+        <h3>Ingredients:</h3>
+        <ul *ngFor="let ingredients of ingredients">
+          <li>{{ ingredients }}</li>
+        </ul>
+      </section>
+    </div>
   </div>
-  <section>
-    <h3>Ingredients:</h3>
-    <ul *ngFor="let ingredients of ingredients">
-      <li>{{ ingredients }}</li>
-    </ul>
-  </section>
 </article>
