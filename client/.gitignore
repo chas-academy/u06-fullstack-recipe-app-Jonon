@@ -45,3 +45,7 @@ Thumbs.db
 # prettier
 .prettierrc
 .prettierignore
+
+# Eslint
+.eslintrc
+.eslintignore
