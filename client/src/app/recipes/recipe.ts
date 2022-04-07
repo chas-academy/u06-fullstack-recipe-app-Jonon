@@ -1,13 +1,18 @@
-export interface Recipe {
-  label: string;
-  image: string;
-  uri: string;
-}
-
 export interface Recipes {
   recipe: Recipe;
 }
 
-export interface edamamAPI {
-  hits: Recipes[];
+export interface Recipe {
+  label: string;
+  totalTime: number;
+  images: images;
+  ingredientLines: [];
+}
+
+export interface images {
+  REGULAR: imageUrl;
+}
+
+interface imageUrl {
+  url: string;
 }
