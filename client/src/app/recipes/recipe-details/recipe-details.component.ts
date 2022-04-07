@@ -12,6 +12,7 @@ export class RecipeDetailsComponent implements OnInit {
   id: any;
 
   title: any = [];
+  image: any = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class RecipeDetailsComponent implements OnInit {
 
     this.recipeService.getRecipe(this.id).subscribe((data: Recipes) => {
       this.title = data.recipe.label;
+      this.image = data.recipe.images.REGULAR.url;
     });
   }
 }
