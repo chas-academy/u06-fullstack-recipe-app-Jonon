@@ -28,6 +28,11 @@ h2 {
   font-size: 3rem;
 }
 
+h2,
+.ingredients {
+  margin: 1rem;
+}
+
 img {
   width: 100%;
 }
