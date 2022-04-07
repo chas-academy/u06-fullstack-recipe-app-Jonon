@@ -8,11 +8,21 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class RecipeService {
-  API_URL = `https://api.edamam.com/api/recipes/v2?type=public&q=mexico&app_id=${environment.app_id}&app_key=${environment.api_key}`;
+  API_URL_BASE = 'https://api.edamam.com/api/recipes/v2/';
+  API_URL_TYPE = '?type=public&';
+  API_URL_Q = 'q=mexico&';
+  API_ID = `app_id=${environment.app_id}&`;
+  API_KEY = `app_key=${environment.api_key}`;
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http.get<any>(this.API_URL);
+    return this.http.get<any>(
+      this.API_URL_BASE +
+        this.API_URL_TYPE +
+        this.API_URL_Q +
+        this.API_ID +
+        this.API_KEY
+    );
   }
 }
