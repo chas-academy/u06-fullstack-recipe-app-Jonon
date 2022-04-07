@@ -1,7 +1,7 @@
 import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
-import { Recipe, edamamAPI } from '../recipe';
+import { edamamAPI } from '../recipes';
 import { Router } from '@angular/router';
 
 @Component({
