@@ -1,4 +1,3 @@
-import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { edamamAPI } from '../recipes';
