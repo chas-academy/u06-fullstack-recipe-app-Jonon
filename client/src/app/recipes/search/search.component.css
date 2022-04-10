@@ -2,7 +2,16 @@
   margin: 1rem;
 }
 
+.search-bar {
+  width: 100%;
+}
+
 .search-form input {
   padding: 0.5rem;
-  width: 100%;
+  width: 90%;
+}
+
+button {
+  padding: 0.5rem;
+  width: 10%;
 }
