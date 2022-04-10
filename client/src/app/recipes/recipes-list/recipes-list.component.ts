@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { edamamAPI } from '../recipes';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipes-list',
@@ -10,12 +11,21 @@ import { Router } from '@angular/router';
 })
 export class RecipesListComponent implements OnInit {
   recipes: any = [];
+  query: string = '';
 
-  constructor(private recipeService: RecipeService, private router: Router) {}
+  constructor(
+    private recipeService: RecipeService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.recipeService.getAll().subscribe((data: edamamAPI) => {
-      this.recipes = data.hits.map((res) => res.recipe);
+    this.route.queryParams.subscribe((params) => {
+      this.query = params['q'];
+
+      this.recipeService.getAll(this.query).subscribe((data: edamamAPI) => {
+        this.recipes = data.hits.map((res) => res.recipe);
+      });
     });
   }
 
