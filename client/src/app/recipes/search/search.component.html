@@ -1,3 +1,5 @@
-<form class="search-form">
-  <input type="search" placeholder="Search recipe" />
+<form [formGroup]="searchForm" class="search-form">
+  <div class="search-bar">
+    <input formControlName="search" type="search" placeholder="Search recipe" />
+  </div>
 </form>
