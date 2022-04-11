@@ -2,8 +2,17 @@
   <div class="search-bar">
     <input formControlName="search" type="search" placeholder="Search recipe" />
 
-    <button routerLink="" [queryParams]="{ q: searchForm.value.search }">
-      Search
-    </button>
+    <button (click)="searchFilter(searchForm.value)">Search</button>
   </div>
+
+  <select name="health" formControlName="health" aria-placeholder="default">
+    <option
+      c
+      *ngFor="let health of health"
+      [ngValue]="health.name"
+      [selected]="health.name"
+    >
+      {{ health.name }}
+    </option>
+  </select>
 </form>
