@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipesListComponent implements OnInit {
   recipes: any = [];
   query: string = '';
+  health?: string;
 
   constructor(
     private recipeService: RecipeService,
@@ -22,10 +23,13 @@ export class RecipesListComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.query = params['q'];
+      this.health = params['health'];
 
-      this.recipeService.getAll(this.query).subscribe((data: edamamAPI) => {
-        this.recipes = data.hits.map((res) => res.recipe);
-      });
+      this.recipeService
+        .getAll(this.query, this.health)
+        .subscribe((data: edamamAPI) => {
+          this.recipes = data.hits.map((res) => res.recipe);
+        });
     });
   }
 
