@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
@@ -15,15 +15,25 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(q: string): Observable<any> {
+  getAll(search: string, health?: string): Observable<any> {
+    let qBase = '&q=';
+    let healthBase = '&health=';
+
+    let params = '&q=' + search;
+
+    if (search && health == '') params = qBase + search;
+    console.log('s', params);
+
+    if (search && health) params = qBase + search + healthBase + health;
+
+    console.log('?', params);
+
     return this.http.get<any>(
       this.API_URL_BASE +
         this.API_URL_TYPE +
-        'q=' +
-        q +
-        '&' +
         this.API_ID +
-        this.API_KEY
+        this.API_KEY +
+        params
     );
   }
 
@@ -32,4 +42,7 @@ export class RecipeService {
       this.API_URL_BASE + id + this.API_URL_TYPE + this.API_ID + this.API_KEY
     );
   }
+}
+function q(q: any, search: string) {
+  throw new Error('Function not implemented.');
 }
