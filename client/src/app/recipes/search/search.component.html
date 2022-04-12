@@ -1,6 +1,7 @@
 <form [formGroup]="searchForm" class="search-form">
   <div class="search-bar">
     <input
+      (change)="searchFilter(searchForm.value)"
       class="search-field"
       formControlName="search"
       type="search"
@@ -10,7 +11,7 @@
     <div
       class="search-button"
       type="button"
-      (click)="searchFilter(searchForm.value)"
+      (keyup.enter)="searchFilter(searchForm.value)"
     >
       <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
     </div>
