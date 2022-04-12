@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   health = [
-    { name: '' },
     { name: 'alcohol-cocktail' },
     { name: 'dairy-free' },
     { name: 'DASH' },
@@ -42,7 +41,7 @@ export class SearchComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder) {
     this.searchForm = this.fb.group({
       search: '',
-      health: '',
+      health: [null],
       mealType: [null]
     });
 

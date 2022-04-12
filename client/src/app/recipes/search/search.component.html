@@ -6,11 +6,8 @@
   </div>
 
   <select name="health" formControlName="health">
-    <option
-      *ngFor="let health of health"
-      [ngValue]="health.name"
-      [selected]="health.name"
-    >
+    <option [ngValue]="null">Health</option>
+    <option *ngFor="let health of health" [ngValue]="health.name">
       {{ health.name }}
     </option>
   </select>
