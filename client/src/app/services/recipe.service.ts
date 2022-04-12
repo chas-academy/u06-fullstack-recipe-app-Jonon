@@ -15,7 +15,7 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(search: string, health?: string): Observable<any> {
+  getAll(search: string, health?: string, mealType?: string): Observable<any> {
     let qBase = '&q=';
     let healthBase = '&health=';
 
