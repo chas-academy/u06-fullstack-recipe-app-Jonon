@@ -5,11 +5,12 @@
 .search-bar {
   width: 100%;
   border: 1px solid rgb(80, 80, 80);
+  display: flex;
 }
 
 .search-field {
   padding: 0.5rem;
-  width: 90%;
+  width: 100%;
   border: none;
 }
 
@@ -17,9 +18,8 @@
   outline: none;
 }
 
-button {
+.search-button {
   padding: 0.5rem;
-  width: 10%;
 }
 
 .controller {
