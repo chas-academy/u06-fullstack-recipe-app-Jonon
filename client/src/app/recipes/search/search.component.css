@@ -4,11 +4,13 @@
 
 .search-bar {
   width: 100%;
+  border: 1px solid rgb(80, 80, 80);
 }
 
-.search-form input {
+.search-field {
   padding: 0.5rem;
   width: 90%;
+  border: none;
 }
 
 button {
