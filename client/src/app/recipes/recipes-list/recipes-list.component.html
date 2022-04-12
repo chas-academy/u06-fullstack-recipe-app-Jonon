@@ -1,9 +1,13 @@
-<app-search></app-search>
-<div class="recipe-list">
-  <div class="card" *ngFor="let recipe of recipes">
-    <header (click)="selectRecipeId(recipe.uri)" class="header-wrapper">
-      <h3>{{ recipe.label }}</h3>
-    </header>
-    <img src="{{ recipe.image }}" />
+<div class="center">
+  <div class="wrapper">
+    <app-search></app-search>
+    <div class="recipe-list">
+      <div class="card" *ngFor="let recipe of recipes">
+        <header (click)="selectRecipeId(recipe.uri)" class="header-wrapper">
+          <h3>{{ recipe.label }}</h3>
+        </header>
+        <img src="{{ recipe.image }}" />
+      </div>
+    </div>
   </div>
 </div>

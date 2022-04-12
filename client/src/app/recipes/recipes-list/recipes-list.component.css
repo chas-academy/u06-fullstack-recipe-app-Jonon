@@ -1,3 +1,15 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 70rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .recipe-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
