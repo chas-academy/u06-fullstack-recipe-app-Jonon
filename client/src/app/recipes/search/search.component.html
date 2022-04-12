@@ -5,14 +5,14 @@
     <button (click)="searchFilter(searchForm.value)">Search</button>
   </div>
 
-  <select name="health" formControlName="health">
+  <select class="controller" name="health" formControlName="health">
     <option [ngValue]="null">Health</option>
     <option *ngFor="let health of health" [ngValue]="health.name">
       {{ health.name }}
     </option>
   </select>
 
-  <select name="mealType" formControlName="mealType">
+  <select class="controller" name="mealType" formControlName="mealType">
     <option [ngValue]="null">Meal type</option>
     <option *ngFor="let mealType of mealType" [ngValue]="mealType.name">
       {{ mealType.name }}

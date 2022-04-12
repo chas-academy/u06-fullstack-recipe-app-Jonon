@@ -15,3 +15,9 @@ button {
   padding: 0.5rem;
   width: 10%;
 }
+
+.controller {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
+}
