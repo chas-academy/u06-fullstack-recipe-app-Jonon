@@ -22,12 +22,12 @@ export class RecipeService {
 
     let params = '&q=' + search;
 
-    if (search && health == '') params = qBase + search;
-    console.log('s', params);
-
     if (search && health) params = qBase + search + healthBase + health;
 
-    console.log('?', params);
+    if (search && mealType) params = qBase + search + mealTypeBase + mealType;
+
+    if (search && health && mealType)
+      params = qBase + search + healthBase + health + mealTypeBase + mealType;
 
     return this.http.get<any>(
       this.API_URL_BASE +
