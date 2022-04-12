@@ -54,9 +54,10 @@ export class SearchComponent implements OnInit {
     let params = args[0];
     let search = params['search'];
     let health = params['health'];
+    let mealType = params['mealType'];
 
     this.router.navigate([''], {
-      queryParams: { q: search, health: health }
+      queryParams: { q: search, health: health, mealType: mealType }
     });
   }
 }
