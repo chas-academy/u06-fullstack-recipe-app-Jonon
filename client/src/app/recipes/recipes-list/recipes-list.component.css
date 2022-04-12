@@ -1,4 +1,4 @@
-.container {
+.recipe-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
@@ -6,7 +6,7 @@
 }
 
 @media only screen and (min-width: 800px) {
-  .container {
+  .recipe-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
