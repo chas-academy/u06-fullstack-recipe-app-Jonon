@@ -13,6 +13,7 @@ export class RecipesListComponent implements OnInit {
   recipes: any = [];
   query: string = '';
   health?: string;
+  mealType?: string;
 
   constructor(
     private recipeService: RecipeService,
@@ -24,9 +25,10 @@ export class RecipesListComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.query = params['q'];
       this.health = params['health'];
+      this.mealType = params['mealType'];
 
       this.recipeService
-        .getAll(this.query, this.health)
+        .getAll(this.query, this.health, this.mealType)
         .subscribe((data: edamamAPI) => {
           this.recipes = data.hits.map((res) => res.recipe);
         });
