@@ -7,7 +7,13 @@
       placeholder="Search recipe"
     />
 
-    <button (click)="searchFilter(searchForm.value)">Search</button>
+    <div
+      class="search-button"
+      type="button"
+      (click)="searchFilter(searchForm.value)"
+    >
+      <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+    </div>
   </div>
 
   <select class="controller" name="health" formControlName="health">
