@@ -5,14 +5,20 @@
     <button (click)="searchFilter(searchForm.value)">Search</button>
   </div>
 
-  <select name="health" formControlName="health" aria-placeholder="default">
+  <select name="health" formControlName="health">
     <option
-      c
       *ngFor="let health of health"
       [ngValue]="health.name"
       [selected]="health.name"
     >
       {{ health.name }}
+    </option>
+  </select>
+
+  <select name="mealType" formControlName="mealType">
+    <option [ngValue]="null">Meal type</option>
+    <option *ngFor="let mealType of mealType" [ngValue]="mealType.name">
+      {{ mealType.name }}
     </option>
   </select>
 </form>

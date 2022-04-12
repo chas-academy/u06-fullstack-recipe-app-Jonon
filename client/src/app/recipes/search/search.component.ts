@@ -27,12 +27,23 @@ export class SearchComponent implements OnInit {
     { name: 'vegan' }
   ];
 
+  mealType = [
+    { name: 'Breakfast' },
+    { name: 'Dinner' },
+    { name: 'Lunch' },
+    { name: 'Snack' },
+    { name: 'Teatime' }
+  ];
+
+  default: string = 'MealType';
+
   searchForm: FormGroup;
 
   constructor(private router: Router, private fb: FormBuilder) {
     this.searchForm = this.fb.group({
       search: '',
-      health: ''
+      health: '',
+      mealType: [null]
     });
 
     this.searchForm.valueChanges.subscribe(console.log);
