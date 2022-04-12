@@ -18,6 +18,7 @@ export class RecipeService {
   getAll(search: string, health?: string, mealType?: string): Observable<any> {
     let qBase = '&q=';
     let healthBase = '&health=';
+    let mealTypeBase = '&mealType=';
 
     let params = '&q=' + search;
 
