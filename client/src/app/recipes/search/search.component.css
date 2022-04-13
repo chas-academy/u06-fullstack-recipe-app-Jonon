@@ -19,9 +19,11 @@
 }
 
 .search-button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(80, 80, 80);
   padding: 0.5rem;
   cursor: pointer;
-  color: rgb(80, 80, 80);
 }
 
 .search-button:hover {
