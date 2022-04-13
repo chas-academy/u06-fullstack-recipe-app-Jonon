@@ -46,14 +46,12 @@ export class SearchComponent implements OnInit {
       health: [null],
       mealType: [null]
     });
-
-    this.searchForm.valueChanges.subscribe(console.log);
   }
 
   ngOnInit(): void {}
 
-  searchFilter(...args: any[]) {
-    let params = args[0];
+  searchFilter() {
+    let params = this.searchForm.value;
     let search = params['search'];
     let health = params['health'];
     let mealType = params['mealType'];
