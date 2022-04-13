@@ -10,8 +10,8 @@ import { environment } from 'src/environments/environment';
 export class RecipeService {
   API_URL_BASE = 'https://api.edamam.com/api/recipes/v2/';
   API_URL_TYPE = '?type=public&';
-  API_ID = `app_id=${environment.app_id}&`;
-  API_KEY = `app_key=${environment.api_key}`;
+  API_ID = `app_id=${environment.APP_ID}&`;
+  API_KEY = `app_key=${environment.API_KEY}`;
 
   constructor(private http: HttpClient) {}
 
