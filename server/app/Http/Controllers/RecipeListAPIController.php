@@ -32,4 +32,21 @@ class RecipeListAPIController extends Controller
             ], 400);
         }
     }
+
+    public function updateRecipeList(Request $request, $id) {
+        if(RecipeList::where('id', $id)->exists()) {
+            $recipeList = RecipeList::find($id);
+
+            $recipeList->name = is_null($request->name) ? $recipeList->name : $request->name;
+            $recipeList->save();
+
+            return response()->json([
+                "message" => "Recipe list updated"
+            ], 200);
+        } else {
+            return response()->json([
+                "message" => "Recipe list not found"
+            ], 404);
+        }
+    }
 }
