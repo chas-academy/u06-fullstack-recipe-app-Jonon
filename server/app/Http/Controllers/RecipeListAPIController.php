@@ -49,4 +49,19 @@ class RecipeListAPIController extends Controller
             ], 404);
         }
     }
+
+    public function deleteRecipeList($id) {
+        if(RecipeList::where('id', $id)->exists()) {
+            $recipeList = RecipeList::find($id);
+            $recipeList->delete();
+
+            return response()->json([
+                "message" => "Recipe list deleted"
+            ], 200);
+        } else {
+            return response()->json([
+                "message" => "Recipe list not found"
+            ], 404);
+        }
+    }
 }
