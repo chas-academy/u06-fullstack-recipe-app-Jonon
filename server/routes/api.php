@@ -25,3 +25,6 @@ Route::get('recipeLists', [RecipeListAPIController::class, 'getAllRecipeLists'])
 
 // Create recipe list
 Route::post('recipeLists', [RecipeListAPIController::class, 'createRecipeList']);
+
+// Get single Recipe List by id
+Route::get('recipeLists/{id}', [RecipeListAPIController::class, 'getRecipeList']);
