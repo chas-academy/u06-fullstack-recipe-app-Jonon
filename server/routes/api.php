@@ -28,3 +28,6 @@ Route::post('recipeLists', [RecipeListAPIController::class, 'createRecipeList'])
 
 // Get single Recipe List by id
 Route::get('recipeLists/{id}', [RecipeListAPIController::class, 'getRecipeList']);
+
+// Update Recipe list
+Route::put('recipeLists/{id}/edit', [RecipeListAPIController::class, 'updateRecipeList']);
