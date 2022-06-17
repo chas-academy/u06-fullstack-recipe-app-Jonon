@@ -31,3 +31,6 @@ Route::get('recipeLists/{id}', [RecipeListAPIController::class, 'getRecipeList']
 
 // Update Recipe list
 Route::put('recipeLists/{id}/edit', [RecipeListAPIController::class, 'updateRecipeList']);
+
+// Delete single Recipe list
+Route::delete('recipeLists/{id}/delete', [RecipeListAPIController::class, 'deleteRecipeList']);
