@@ -22,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Get all recipe lists
 Route::get('recipeLists', [RecipeListAPIController::class, 'getAllRecipeLists']);
+
+// Create recipe list
+Route::post('recipeLists', [RecipeListAPIController::class, 'createRecipeList']);
