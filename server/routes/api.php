@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RecipeListAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,10 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
+Route::group(['middleware' => 'auth:sanctum'], function() {
 
 // Get all recipe lists
 Route::get('recipeLists', [RecipeListAPIController::class, 'getAllRecipeLists']);
@@ -34,3 +33,7 @@ Route::put('recipeLists/{id}/edit', [RecipeListAPIController::class, 'updateReci
 
 // Delete single Recipe list
 Route::delete('recipeLists/{id}/delete', [RecipeListAPIController::class, 'deleteRecipeList']);
+
+});
+
+
