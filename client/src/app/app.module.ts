@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RecipesModule } from './recipes/recipes.module';
 import { RecipeService } from './services/recipe.service';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,13 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     LoginComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, RecipesModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RecipesModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
 })
