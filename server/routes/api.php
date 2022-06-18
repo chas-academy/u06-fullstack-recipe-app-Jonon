@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::post('register', [AuthController::class, 'register']);
+
 Route::group(['middleware' => 'auth:sanctum'], function() {
 
 // Get all recipe lists
