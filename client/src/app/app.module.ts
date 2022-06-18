@@ -10,13 +10,15 @@ import { FooterComponent } from './footer/footer.component';
 
 import { RecipesModule } from './recipes/recipes.module';
 import { RecipeService } from './services/recipe.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [BrowserModule, AppRoutingModule, RecipesModule, HttpClientModule],
   providers: [RecipeService],
