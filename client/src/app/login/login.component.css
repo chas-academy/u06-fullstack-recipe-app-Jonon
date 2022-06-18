@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 75vh;
+}
+
+.form-container {
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+}
+
+.form {
+  display: grid;
+  grid-row-gap: 0.5rem;
+}
+
+.form input,
+.form button {
+  padding: 0.5rem;
+}
