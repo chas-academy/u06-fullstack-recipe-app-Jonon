@@ -6,12 +6,14 @@ import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './shared/auth.guard';
 import { RecipeListsComponent } from './recipe-lists/recipe-lists.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'recipes', pathMatch: 'full' },
   { path: 'recipes', component: RecipesListComponent },
   { path: 'recipes/:id', component: RecipeDetailsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: 'recipelists',
     component: RecipeListsComponent,
