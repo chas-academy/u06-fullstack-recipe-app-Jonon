@@ -2,5 +2,10 @@
   <a routerLink="recipes">
     <h1>Recipe App</h1>
   </a>
-  <button class="btn btn-outline" routerLink="/login">Login</button>
+  <div *ngIf="this.authService.isLoggedIn">
+    <button class="btn btn-outline" (click)="logout()">Logout</button>
+  </div>
+  <div *ngIf="!this.authService.isLoggedIn">
+    <button class="btn btn-outline" routerLink="/login">Login</button>
+  </div>
 </header>
