@@ -14,6 +14,7 @@ import { RecipeService } from './services/recipe.service';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeListsComponent } from './recipe-lists/recipe-lists.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RecipeListsComponent } from './recipe-lists/recipe-lists.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RecipeListsComponent
+    RecipeListsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
