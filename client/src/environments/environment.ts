@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  APP_ID: 'bacd5eb4',
-  API_KEY: 'c9133ace8c3cde44e39c0d46807b6728',
+  APP_ID: 'bfaf4ffb',
+  API_KEY: '433472119c46cbf02de4c7bd7bccf01b',
   RECIPE_LIST_API: 'http://localhost:8000/api'
 };
 
