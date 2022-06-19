@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
+import { User } from '../shared/user';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse
+} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor() { }
+  endpoint: string = 'http://localhost:8000/api';
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
+  currentUser = {};
+  constructor(private http: HttpClient, public router: Router) {}
 }
