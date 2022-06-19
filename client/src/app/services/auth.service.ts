@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../shared/user';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import {
   HttpClient,
   HttpHeaders,
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  endpoint: string = 'http://localhost:8000/api';
+  endpoint: string = `${environment.RECIPE_LIST_API}`;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
   constructor(private http: HttpClient, public router: Router) {}
