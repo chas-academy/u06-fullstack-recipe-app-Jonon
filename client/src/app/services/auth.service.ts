@@ -41,4 +41,16 @@ export class AuthService {
     let authToken = localStorage.getItem('access_token');
     return authToken !== null ? true : false;
   }
+
+  handleError(error: HttpErrorResponse) {
+    let msg = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      msg = error.error.message;
+    } else {
+      // server-side error
+      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(msg);
+  }
 }
