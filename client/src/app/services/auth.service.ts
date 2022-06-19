@@ -17,4 +17,13 @@ export class AuthService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
   constructor(private http: HttpClient, public router: Router) {}
+
+  // Log in
+  login(user: User) {
+    return this.http
+      .post<any>(`${this.endpoint}/login`, user)
+      .subscribe((res: any) => {
+        localStorage.setItem('access_token', res.token);
+      });
+  }
 }
