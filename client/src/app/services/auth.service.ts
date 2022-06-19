@@ -18,6 +18,12 @@ export class AuthService {
   currentUser = {};
   constructor(private http: HttpClient, public router: Router) {}
 
+  // register
+  register(user: User): Observable<any> {
+    let api = `${this.endpoint}/register`;
+    return this.http.post(api, user).pipe(catchError(this.handleError));
+  }
+
   // Log in
   login(user: User) {
     return this.http
