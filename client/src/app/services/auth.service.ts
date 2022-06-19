@@ -42,6 +42,14 @@ export class AuthService {
     return authToken !== null ? true : false;
   }
 
+  // logout
+  logout() {
+    let removeToken = localStorage.removeItem('access_token');
+    if (removeToken == null) {
+      this.router.navigate(['login']);
+    }
+  }
+
   handleError(error: HttpErrorResponse) {
     let msg = '';
     if (error.error instanceof ErrorEvent) {
