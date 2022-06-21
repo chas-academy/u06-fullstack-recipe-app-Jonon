@@ -24,8 +24,8 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     // log out user
     Route::post('logout', [AuthController::class, 'logout']);
     
-    // Get all recipe lists
-    Route::get('recipeLists', [RecipeListAPIController::class, 'getAllRecipeLists']);
+    // Get all recipe lists by user id
+    Route::get('users/{user_id}/recipeLists', [RecipeListAPIController::class, 'getAllRecipeLists']);
     // Create recipe list
     Route::post('recipeLists', [RecipeListAPIController::class, 'createRecipeList']);
     // Get single Recipe List by id
