@@ -25,8 +25,8 @@ class RecipeListAPIController extends Controller
 
     public function getRecipeList($id) {
         if(RecipeList::where('id', $id)->exists()) {
-            $recipeList = RecipeList::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($recipeList, 200);
+            $recipeList = RecipeList::where('id', $id)->get();
+            return response()->json($recipeList, 200);
         } else {
             return response()->json([
                 "message" => "Recipe list not found"
