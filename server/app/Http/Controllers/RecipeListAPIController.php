@@ -16,6 +16,7 @@ class RecipeListAPIController extends Controller
     public function createRecipeList(Request $request) {
         $recipeList = new RecipeList();
         $recipeList->name = $request->name;
+        $recipeList->user_id = $request->user_id;
         $recipeList->save();
 
         return response()->json([
