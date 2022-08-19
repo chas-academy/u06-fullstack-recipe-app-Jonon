@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class RecipeList extends Model
 {
     protected $table = 'recipe_lists';
+
+    public function recipes() {
+        return $this->hasMany(Recipe::class);
+    }
 }
