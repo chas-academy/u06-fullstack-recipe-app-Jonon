@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 
 class RecipeListAPIController extends Controller
 {
-    public function getAllRecipeLists($user_id) {
+    public function getAllRecipeLists() {
+
+        $user_id = request('id');
 
         $recipeLists = RecipeList::where('user_id', $user_id)->get();
         return response()->json($recipeLists, 200);
