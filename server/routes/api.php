@@ -29,13 +29,13 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::get('recipe_lists', [RecipeListAPIController::class, 'index']);
     // Create recipe list
     Route::post('recipe_lists', [RecipeListAPIController::class, 'create']);
-    // Get single Recipe List by id
+    // Get single Recipe List
     Route::get('recipe_lists/{id}', [RecipeListAPIController::class, 'show']);
     // Update Recipe list
     Route::put('recipe_lists/{id}/edit', [RecipeListAPIController::class, 'update']);
     // Delete single Recipe list
     Route::delete('recipe_lists/{id}/delete', [RecipeListAPIController::class, 'destroy']);
 
-    // Get all recipes by recipe_list_id
+    // Get all recipes
     Route::get('recipes', [RecipeController::class, 'index']);
 });
