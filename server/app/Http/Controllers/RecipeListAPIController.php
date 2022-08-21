@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class RecipeListAPIController extends Controller
 {
-    public function getAllRecipeLists() {
+    public function index() {
 
         $user_id = request('id');
 
@@ -15,7 +15,7 @@ class RecipeListAPIController extends Controller
         return response()->json($recipeLists, 200);
     }
 
-    public function createRecipeList(Request $request) {
+    public function create(Request $request) {
         $recipeList = new RecipeList();
         $recipeList->name = $request->name;
         $recipeList->user_id = $request->user_id;
@@ -26,7 +26,7 @@ class RecipeListAPIController extends Controller
         ], 201);
     }
 
-    public function getRecipeList($id) {
+    public function show($id) {
         if(RecipeList::where('id', $id)->exists()) {
             $recipeList = RecipeList::where('id', $id)->get();
             return response()->json($recipeList, 200);
@@ -37,7 +37,7 @@ class RecipeListAPIController extends Controller
         }
     }
 
-    public function updateRecipeList(Request $request, $id) {
+    public function update(Request $request, $id) {
         if(RecipeList::where('id', $id)->exists()) {
             $recipeList = RecipeList::find($id);
 
@@ -54,7 +54,7 @@ class RecipeListAPIController extends Controller
         }
     }
 
-    public function deleteRecipeList($id) {
+    public function destroy($id) {
         if(RecipeList::where('id', $id)->exists()) {
             $recipeList = RecipeList::find($id);
             $recipeList->delete();
