@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\RecipeListAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,16 +25,17 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     // log out user
     Route::post('logout', [AuthController::class, 'logout']);
     
-    // Get all recipe lists by user id
-    Route::get('users/{user_id}/recipeLists', [RecipeListAPIController::class, 'getAllRecipeLists']);
+    // Get all recipe lists
+    Route::get('recipe_lists', [RecipeListAPIController::class, 'getAllRecipeLists']);
     // Create recipe list
-    Route::post('recipeLists', [RecipeListAPIController::class, 'createRecipeList']);
+    Route::post('recipe_lists', [RecipeListAPIController::class, 'createRecipeList']);
     // Get single Recipe List by id
-    Route::get('recipeLists/{id}', [RecipeListAPIController::class, 'getRecipeList']);
+    Route::get('recipe_lists/{recipe_list_id}', [RecipeListAPIController::class, 'getRecipeList']);
     // Update Recipe list
-    Route::put('recipeLists/{id}/edit', [RecipeListAPIController::class, 'updateRecipeList']);
+    Route::put('recipe_lists/{recipe_list_id}/edit', [RecipeListAPIController::class, 'updateRecipeList']);
     // Delete single Recipe list
-    Route::delete('recipeLists/{id}/delete', [RecipeListAPIController::class, 'deleteRecipeList']);
+    Route::delete('recipe_lists/{recipe_list_id}/delete', [RecipeListAPIController::class, 'deleteRecipeList']);
+
+    // Get all recipes by recipe_list_id
+    Route::get('recipes', [RecipeController::class, 'getAllRecipes']);
 });
-
-
