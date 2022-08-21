@@ -37,5 +37,5 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::delete('recipe_lists/{id}/delete', [RecipeListAPIController::class, 'destroy']);
 
     // Get all recipes by recipe_list_id
-    Route::get('recipes', [RecipeController::class, 'getAllRecipes']);
+    Route::get('recipes', [RecipeController::class, 'index']);
 });
