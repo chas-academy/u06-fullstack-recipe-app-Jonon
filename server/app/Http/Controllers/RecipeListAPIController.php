@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class RecipeListAPIController extends Controller
 {
+    /** 
+     * Display listing of resource by specific query param id 
+    */
     public function index() {
 
         $user_id = request('id');
