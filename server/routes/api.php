@@ -21,10 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
-Route::group(['middleware' => 'auth:sanctum'], function() {
+Route::group(['middleware' => 'auth:sanctum'], function () {
     // log out user
     Route::post('logout', [AuthController::class, 'logout']);
-    
+    // Get user info
+    Route::get('user', [AuthController::class, 'getCurrentUser']);
     // Get all recipe lists
     Route::get('recipe_lists', [RecipeListAPIController::class, 'index']);
     // Create recipe list
@@ -35,7 +36,6 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::put('recipe_lists/{id}/edit', [RecipeListAPIController::class, 'update']);
     // Delete single Recipe list
     Route::delete('recipe_lists/{id}/delete', [RecipeListAPIController::class, 'destroy']);
-
     // Get all recipes
     Route::get('recipes', [RecipeController::class, 'index']);
 });
