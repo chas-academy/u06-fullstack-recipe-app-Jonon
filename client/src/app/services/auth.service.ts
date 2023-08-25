@@ -31,6 +31,7 @@ export class AuthService {
       .post<any>(`${this.endpoint}/login`, user)
       .subscribe((res: any) => {
         localStorage.setItem('access_token', res.token);
+        this.router.navigate(['recipelists']);
       });
   }
 
