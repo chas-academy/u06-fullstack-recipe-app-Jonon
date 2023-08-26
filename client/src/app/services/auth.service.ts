@@ -9,6 +9,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { IUser } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,10 @@ export class AuthService {
         localStorage.setItem('access_token', res.token);
         this.router.navigate(['recipelists']);
       });
+  }
+
+  getUser(): Observable<IUser> {
+    return this.http.get<IUser>(`${this.endpoint}/user`);
   }
 
   getToken() {
