@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { RecipeListsService } from '../services/recipe-lists.service';
 import { AuthService } from '../services/auth.service';
 import { RecipeLists } from '../interfaces/recipe-lists';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-lists',
@@ -10,7 +11,12 @@ import { RecipeLists } from '../interfaces/recipe-lists';
   styleUrls: ['./recipe-lists.component.css']
 })
 export class RecipeListsComponent implements OnInit {
+  applyForm = new FormGroup({
+    listName: new FormControl('')
+  });
+
   faPlusCircle = faPlusCircle;
+  faPlus = faPlus;
 
   public recipeLists: RecipeLists[] = [];
 
@@ -28,6 +34,16 @@ export class RecipeListsComponent implements OnInit {
       this.recipeListService
         .getRecipeLists(data.user.id)
         .subscribe((data) => (this.recipeLists = data));
+    });
+  }
+
+  CreateRecipeList() {
+    this.authService.getUser().subscribe((data) => {
+      this.recipeListService
+        .createRecpeList(data.user.id, this.applyForm.value.listName)
+        .subscribe(() => {
+          this.loadRecipeLists();
+        });
     });
   }
 }
