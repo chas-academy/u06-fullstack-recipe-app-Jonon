@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { RecipeListsService } from '../services/recipe-lists.service';
+import { AuthService } from '../services/auth.service';
+import { RecipeLists } from '../interfaces/recipe-lists';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-lists',
@@ -7,12 +11,24 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./recipe-lists.component.css']
 })
 export class RecipeListsComponent implements OnInit {
-
   faPlusCircle = faPlusCircle;
 
-  constructor() { }
+  public recipeLists: RecipeLists[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private authService: AuthService,
+    private recipeListService: RecipeListsService
+  ) {}
+
+  ngOnInit() {
+    this.loadRecipeLists();
   }
 
+  loadRecipeLists() {
+    this.authService.getUser().subscribe((data) => {
+      this.recipeListService
+        .getRecipeLists(data.user.id)
+        .subscribe((data) => (this.recipeLists = data));
+    });
+  }
 }
