@@ -2,7 +2,8 @@
   <a routerLink="recipes">
     <h1>Recipe App</h1>
   </a>
-  <div *ngIf="this.authService.isLoggedIn">
+  <div class="container" *ngIf="this.authService.isLoggedIn" >
+    <p class="nav-item" routerLink="/recipelists">Lists</p>
     <button class="btn btn-outline" (click)="logout()">Logout</button>
   </div>
   <div *ngIf="!this.authService.isLoggedIn">

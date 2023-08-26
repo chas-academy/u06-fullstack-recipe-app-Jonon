@@ -3,7 +3,6 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { RecipeListsService } from '../services/recipe-lists.service';
 import { AuthService } from '../services/auth.service';
 import { RecipeLists } from '../interfaces/recipe-lists';
-import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-lists',
