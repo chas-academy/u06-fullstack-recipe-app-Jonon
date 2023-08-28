@@ -13,7 +13,7 @@
         </div>
     </form>
    
-    <div class="recipe-list" *ngFor="let recipeList of recipeLists" >
+    <div class="recipe-list" [routerLink]="['/recipelist', recipeList.id]" *ngFor="let recipeList of recipeLists" >
         <h4>{{recipeList.name}} </h4>
     </div>
 </div>

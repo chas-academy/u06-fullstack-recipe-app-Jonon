@@ -3,7 +3,7 @@ import { faPlusCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { RecipeListsService } from '../services/recipe-lists.service';
 import { AuthService } from '../services/auth.service';
 import { RecipeLists } from '../interfaces/recipe-lists';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-lists',
