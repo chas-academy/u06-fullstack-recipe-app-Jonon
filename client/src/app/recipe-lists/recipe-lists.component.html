@@ -3,7 +3,17 @@
         <h3>Lists</h3>
         <fa-icon class="size" [icon]="faPlusCircle"></fa-icon>
     </header>
-    <div class="recipe-list">
-        <h4>Recipe item</h4>
+
+    <form class="form" [formGroup]="applyForm" (submit)="CreateRecipeList()" >
+        <div class="form-container" >
+            <input class="input-field" placeholder="Add new list" formControlName="listName" />
+            <button type="submit" class="btn-none">
+                <fa-icon class="size faPlus" [icon]="faPlus"  ></fa-icon>
+            </button>
+        </div>
+    </form>
+   
+    <div class="recipe-list" [routerLink]="['/recipelist', recipeList.id]" *ngFor="let recipeList of recipeLists" >
+        <h4>{{recipeList.name}} </h4>
     </div>
 </div>

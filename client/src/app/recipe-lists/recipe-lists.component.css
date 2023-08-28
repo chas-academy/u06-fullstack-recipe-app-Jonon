@@ -5,6 +5,46 @@
   align-items: center;
 }
 
+.form {
+  width: 30%;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  line-height: 0;
+}
+
+.input-field {
+  width: 90%;
+  padding: 0.5rem 0.5rem;
+  border: none;
+}
+
+.input-field:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.faPlus {
+  color: rgba(51, 31, 0, 0.5);
+  font-size: 1.5rem;
+  margin: 0.1rem 0;
+  cursor: pointer;
+}
+.faPlus:hover {
+  color: rgba(51, 31, 0, 0.9);
+}
+
+.btn-none {
+  border: none;
+  background-color: transparent;
+}
+
 .title-bar {
   display: flex;
   align-items: center;

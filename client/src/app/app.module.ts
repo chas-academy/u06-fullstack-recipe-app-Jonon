@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { RecipesModule } from './recipes/recipes.module';
 import { RecipeService } from './services/recipe.service';
+import { RecipeListsService } from './services/recipe-lists.service';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeListsComponent } from './recipe-lists/recipe-lists.component';
@@ -38,6 +39,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   providers: [
     RecipeService,
+    RecipeListsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
