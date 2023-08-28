@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeListsComponent } from './recipe-lists/recipe-lists.component';
 import { RegisterComponent } from './register/register.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule,
     RecipesModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [
     RecipeService,
